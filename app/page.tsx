@@ -1,13 +1,14 @@
 'use client'
 import type { NextPage } from "next";
+import ToolUi from '../components/ToolUi';
 
 const Home: NextPage = () => {
   return (
  <section className="main">
   <div className="container">
     <div className="innerWrap">
-      <h1>Image Scanner Tool</h1>
-      <div className="input-container">
+      <ToolUi/>
+      {/* <div className="input-container">
         <div className="input-wrapper">
           <input
             type="text"
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
           </span>
         </div>
         <button className="button">Scan</button>
-      </div>
+      </div> */}
     </div>
   </div>
 </section>
