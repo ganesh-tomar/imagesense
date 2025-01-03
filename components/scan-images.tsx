@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 interface ImageInfo {
   src: string;
@@ -101,6 +102,12 @@ const ImageScanner: React.FC = () => {
                         className="w-full h-auto max-w-[120px] max-h-[110px]  mb-3 rounded-lg "
                         style={{ maxWidth: "120px" }}
                       />
+                       {/* <Image
+                      src={imageUrl}
+                      alt={image.alt || "No alt text"}
+                      className="w-full h-auto max-w-[120px] max-h-[110px] mb-3 rounded-lg"
+                      width={100} height={100}
+                    /> */}
                     </div>
                       <p className={`text-lg font-medium text-center ${isAltMissing ? "text-white" : "text-gray-700"}`}>
                         <strong className="font-semibold">Alt:</strong> {image.alt || "Missing"}

@@ -1,6 +1,5 @@
 'use client'
 import type { NextPage } from "next";
-import ToolUi from '../components/ToolUi';
 import ImageScanner from "../components/scan-images";
 
 const Home: NextPage = () => {
@@ -9,7 +8,6 @@ const Home: NextPage = () => {
   <div className="container">
     <div className="innerWrap">
       <ImageScanner/>
-      {/* <ToolUi/> */}
       {/* <div className="input-container">
         <div className="input-wrapper">
           <input

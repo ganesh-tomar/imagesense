@@ -80,7 +80,7 @@ const AltChecker = () => {
                 <th className="py-2 px-4">Source</th>
               </tr>
             </thead>
-            <tbody>
+            {/* <tbody>
               {results.map((img, index) => (
                 <tr key={index} className="border-t">
                   <td className="py-2 px-4">
@@ -100,7 +100,7 @@ const AltChecker = () => {
                   </td>
                 </tr>
               ))}
-            </tbody>
+            </tbody> */}
           </table>
         ) : (
           <p className="text-gray-500 text-center mt-4 mb-6">
