@@ -59,7 +59,7 @@ const ImageScanner: React.FC = () => {
     <section className="main">
       <div className="container">
         <div className="innerWrap">
-          <h1>Image Scanner Tool</h1>
+          <h1>Alt Tag Checker</h1>
           <div className="input-container">
             <div className="input-wrapper">
               <input
