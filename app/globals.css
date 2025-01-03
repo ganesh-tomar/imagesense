@@ -22,7 +22,7 @@ body {
 section.main {
   width: 100%;
   min-height: 100vh;
-  background-color: white;
+  background-color: #ffffff;
   padding: 20px;
 }
 
@@ -92,4 +92,7 @@ h1 {
 
 .button:hover {
   background-color: #005bb5;
+}
+.results{
+  color: #000;
 }

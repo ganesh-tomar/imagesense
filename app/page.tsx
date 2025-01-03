@@ -1,13 +1,15 @@
 'use client'
 import type { NextPage } from "next";
 import ToolUi from '../components/ToolUi';
+import ImageScanner from "../components/scan-images";
 
 const Home: NextPage = () => {
   return (
  <section className="main">
   <div className="container">
     <div className="innerWrap">
-      <ToolUi/>
+      <ImageScanner/>
+      {/* <ToolUi/> */}
       {/* <div className="input-container">
         <div className="input-wrapper">
           <input

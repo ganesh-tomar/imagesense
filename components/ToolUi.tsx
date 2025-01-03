@@ -18,19 +18,22 @@ const AltChecker = () => {
     }
   
     setIsLoading(true);
-    setResults([]); // Clear previous results
+    setResults([]);
   
     try {
-      // Send a POST request to the /api/analyze endpoint with the URL
-      const response = await fetch("/analyze", {
+      const response = await fetch("/pages/api/analyze.ts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
       });
   
-      const data = await response.json();
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert(errorData.error || "An unknown error occurred.");
+        return;
+      }
   
-      // If the API call is successful, update the results
+      const data = await response.json();
       setResults(data.images || []);
     } catch (error) {
       console.error("Error analyzing the URL:", error);
@@ -39,6 +42,7 @@ const AltChecker = () => {
       setIsLoading(false);
     }
   };
+  
   
 
   return (
