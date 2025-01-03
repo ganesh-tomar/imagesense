@@ -59,7 +59,7 @@ h1 {
 }
 
 .input {
-  padding: 10px;
+  padding: 10px 25px 10px 10px;
   font-size: 1rem;
   width: 100%;
   border: 1px solid #ccc;
