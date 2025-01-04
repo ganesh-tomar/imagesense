@@ -56,10 +56,10 @@ const ImageScanner: React.FC = () => {
   };
 
   return (
-    <section className="main">
+    <section className="main bg-indigo-600">
       <div className="container">
         <div className="innerWrap">
-          <h1>Alt Tag Checker</h1>
+          <h1 className="text-white">Alt Tag Checker</h1>
           <div className="input-container">
             <div className="input-wrapper">
               <input
@@ -91,7 +91,7 @@ const ImageScanner: React.FC = () => {
                   return (
                     <li
                       key={index}
-                      className={`flex flex-col items-center p-4 rounded-lg shadow-lg transform transition-all bg-white hover:bg-[#619EA8] hover:!text-white ease-in-out delay-150 text-black ${isAltMissing ? "bg-red-500 text-white" : ""
+                      className={`flex flex-col items-center p-4 transform transition-all  hover:bg-[#619EA8] hover:!text-white ease-in-out delay-150 text-black border-b  ${isAltMissing ? "bg-red-500 text-white" : ""
                         } scale-none hover:scale-105 hover:shadow-xl cursor-pointer`}
                     >
                     <div className="w-auto max-w-[120px] h-[100px] mb-[30px]">
@@ -101,14 +101,8 @@ const ImageScanner: React.FC = () => {
                         className="w-full h-auto max-w-[120px] max-h-[110px]  mb-3 rounded-lg "
                         style={{ maxWidth: "120px" }}
                       />
-                       {/* <Image
-                      src={imageUrl}
-                      alt={image.alt || "No alt text"}
-                      className="w-full h-auto max-w-[120px] max-h-[110px] mb-3 rounded-lg"
-                      width={100} height={100}
-                    /> */}
                     </div>
-                      <p className={`text-lg font-medium text-center ${isAltMissing ? "text-white" : "text-gray-700"}`}>
+                      <p className={`text-lg font-medium text-center text-white`}>
                         <strong className="font-semibold">Alt:</strong> {image.alt || "Missing"}
                       </p>
                     </li>
