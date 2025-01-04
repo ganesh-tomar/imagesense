@@ -1,11 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { JSDOM } from 'jsdom';
 
-interface ImageInfo {
-  src: string;
-  alt: string | null;
-}
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   console.log("Handler is called....");
 
