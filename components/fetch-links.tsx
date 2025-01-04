@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <section className="h-[100vh] bg-gray-400">
+    <section className="min-h-[100vh] bg-gray-400">
       <div className="container h-full">
         <div className="w-full h-full flex-col flex flex-wrap items-center justify-center">
           <h1>Link Fetcher Tool</h1>
