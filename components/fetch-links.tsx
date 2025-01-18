@@ -18,24 +18,28 @@ export default function Home() {
 
     try {
       const response = await fetch(
-        `/api/fetch-links?url=${encodeURIComponent(url)}`
+        `/api/analyze-site?url=${encodeURIComponent(url)}`
       );
-      const data: { links?: string[]; error?: string } = await response.json();
+      const data: {
+        links?: { url: string; status: number }[];
+        error?: string;
+      } = await response.json();
 
       if (response.ok && data.links) {
-        setLinks(data.links);
+        // Only extract the URLs from the response to display in the list
+        setLinks(data.links.map((link) => link.url));
       } else {
         setError(data.error || "Failed to fetch links.");
       }
     } catch (err: unknown) {
-        if (err instanceof Error) {
-          setError(err.message || "An error occurred while scanning the URL.");
-        } else {
-          setError("An unknown error occurred.");
-        }
-      }finally {
-        setLoading(false);
+      if (err instanceof Error) {
+        setError(err.message || "An error occurred while scanning the URL.");
+      } else {
+        setError("An unknown error occurred.");
       }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -51,7 +55,11 @@ export default function Home() {
               onChange={(e) => setUrl(e.target.value)}
               placeholder="Enter website URL"
             />
-              <button className="button ml-[20px]" onClick={fetchLinks} disabled={loading}>
+            <button
+              className="button ml-[20px]"
+              onClick={fetchLinks}
+              disabled={loading}
+            >
               {loading ? "Fetching..." : "Fetch"}
             </button>
           </div>
